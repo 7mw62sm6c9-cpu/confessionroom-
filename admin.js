@@ -1,4 +1,4 @@
-const SUPABASE_URL = "https://trddcmyyhyanspandlhk.supabase.co";
+const SUPABASE_URL = "https://trdcdmyyhyanspandlhk.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_Ohcw_Kc0lyienmiK9wxFoQ_XtYaZjI2";
 
 const loginBox = document.getElementById("loginBox");
