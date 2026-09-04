@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Confession Room</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-1"></div>
+  <div class="ambient ambient-2"></div>
+  <div class="grain"></div>
+
+  <main class="page">
+    <section class="hero">
+      <div class="bubble-icon">♡</div>
+      <p class="eyebrow">TONIGHT, NOTHING STAYS UNSAID</p>
+      <h1>CONFESSION<br><span>ROOM</span></h1>
+      <p class="tagline">No names. No judgment.<br>Just your truth.</p>
+    </section>
+
+    <section class="card">
+      <div class="card-title">
+        <span class="title-icon">✦</span>
+        <h2>What's on your mind?</h2>
+      </div>
+
+      <form id="confessionForm">
+        <div class="textarea-wrap">
+          <textarea id="confession" maxlength="500" required
+            placeholder="Write your confession here..."></textarea>
+          <span id="counter">0 / 500</span>
+        </div>
+
+        <div class="privacy">
+          <div class="lock">⌁</div>
+          <div>
+            <strong>Anonymous by design</strong>
+            <p>Don't include your name, phone number or other personal details.</p>
+          </div>
+        </div>
+
+        <button class="send-btn" type="submit" id="sendBtn">
+          <span>SEND ANONYMOUSLY</span>
+          <span class="arrow">↗</span>
+        </button>
+        <p id="status" class="status" aria-live="polite"></p>
+      </form>
+
+      <div class="footer-line">✦ Your secret belongs in the room. ✦</div>
+    </section>
+
+    <p class="fine-print">By sending, you agree that event organizers may moderate submissions.</p>
+  </main>
+
+  <div class="success" id="success">
+    <div class="success-box">
+      <div class="success-heart">♥</div>
+      <h2>CONFESSION<br><span>RECEIVED.</span></h2>
+      <p>Your confession has entered the room.</p>
+      <button onclick="location.reload()">SEND ANOTHER</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>

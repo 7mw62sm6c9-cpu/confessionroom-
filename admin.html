@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Confession Room — Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .admin{max-width:900px}.admin h1{font-family:"Space Grotesk";font-size:42px;line-height:.95;margin:0}.admin h1 span{color:#bd94ff}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}.toolbar button,.login button{border:1px solid #a84fff55;background:#ffffff0a;color:#fff;border-radius:12px;padding:11px 15px;font-weight:700;cursor:pointer}.toolbar .primary,.login .primary{background:linear-gradient(100deg,#ff167d,#7039ff);border:0}.stats{display:flex;gap:10px;margin-bottom:15px}.stat{flex:1;padding:14px;border:1px solid #8e4bca33;border-radius:16px;background:#ffffff06}.stat b{display:block;font-size:25px}.stat small{color:#958aa3}.list{display:grid;gap:10px}.item{padding:17px;border:1px solid #8e4bca33;border-radius:17px;background:#0d0916dd}.item p{margin:0 0 13px;white-space:pre-wrap;line-height:1.5}.item small{color:#81778f}.item-actions{display:flex;gap:7px;margin-top:12px}.item-actions button{border:1px solid #8e4bca44;background:#ffffff08;color:#fff;border-radius:9px;padding:8px 10px;cursor:pointer}.item-actions .approve{background:#4d1a8738}.item-actions .danger{color:#ff93bd}.login{max-width:420px;margin:70px auto}.login input{display:block;width:100%;padding:14px;margin:8px 0 12px;border-radius:12px;border:1px solid #8e4bca55;background:#090611;color:#fff;outline:0}.hidden{display:none!important}
+  </style>
+</head>
+<body>
+  <div class="ambient ambient-1"></div><div class="ambient ambient-2"></div><div class="grain"></div>
+  <main class="page admin">
+    <section id="loginBox" class="card login">
+      <p class="eyebrow">PRIVATE ORGANIZER AREA</p>
+      <h1>CONFESSION<br><span>ROOM</span></h1>
+      <p style="color:#9f96aa">Sign in to moderate submissions.</p>
+      <input id="email" type="email" placeholder="Admin email">
+      <input id="password" type="password" placeholder="Password">
+      <button class="primary" style="width:100%;padding:13px" id="loginBtn">SIGN IN</button>
+      <p id="loginStatus" class="status"></p>
+    </section>
+
+    <section id="dashboard" class="hidden">
+      <p class="eyebrow">PRIVATE ORGANIZER AREA</p>
+      <h1>CONFESSION<br><span>DASHBOARD</span></h1>
+      <div class="toolbar">
+        <button class="primary" id="refreshBtn">↻ REFRESH</button>
+        <button id="signoutBtn">SIGN OUT</button>
+      </div>
+      <div class="stats">
+        <div class="stat"><b id="total">0</b><small>Total</small></div>
+        <div class="stat"><b id="pending">0</b><small>Pending</small></div>
+        <div class="stat"><b id="approved">0</b><small>Approved</small></div>
+      </div>
+      <div id="list" class="list"></div>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
